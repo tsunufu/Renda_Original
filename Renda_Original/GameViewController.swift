@@ -26,6 +26,8 @@ class GameViewController: UIViewController {
     
     //スロットぐるぐるタイマー
     var timer: Timer = Timer()
+    //countが0になったときに遅れてリザルト画面表示させるようのタイマー
+    var resultTimer: Timer = Timer()
     
     //表示する画像の番号
     var dispImageNumber = 0
@@ -47,21 +49,21 @@ class GameViewController: UIViewController {
     }
     
     func displayImage() {
-
+        
         // 画像の名前の配列
         let firstImageNameArray = [
             "satsumaimo",
             "shiitake",
             "kyuuri",
             "gobou"
-            ]
+        ]
         
         let secondImageNameArray = [
             "shiitake",
             "gobou",
             "kyuuri",
             "satsumaimo"
-            ]
+        ]
         
         let thirdImageNameArray = [
             "kyuuri",
@@ -70,29 +72,29 @@ class GameViewController: UIViewController {
             "shiitake"
             
         ]
-
+        
         // 画像の番号が正常な範囲を指しているかチェック
-
+        
         // 範囲より下を指している場合、最後の画像を表示
         if dispImageNumber < 0 {
             dispImageNumber = 3
         }
-
+        
         // 範囲より上を指している場合、最初の画像を表示
         if dispImageNumber > 3 {
             dispImageNumber = 0
         }
-
+        
         // 表示している画像の番号から名前を取り出し
         let firstName = firstImageNameArray[dispImageNumber]
         let secondName = secondImageNameArray[dispImageNumber]
         let thirdName = thirdImageNameArray[dispImageNumber]
-
+        
         // 画像を読み込み
         let firstImage = UIImage(named: firstName)
         let secondImage = UIImage(named: secondName)
         let thirdImage = UIImage(named: thirdName)
-
+        
         // Image Viewに読み込んだ画像をセット
         firstSlotImageView.image = firstImage
         secondSlotImageView.image = secondImage
@@ -101,7 +103,7 @@ class GameViewController: UIViewController {
     
     //タイマーによって一定の関数で呼び出される関数
     @objc func onTimer() {
-//        print("onTimer")
+        //        print("onTimer")
         
         //画像の番号増やす
         dispImageNumber += 1
@@ -190,13 +192,25 @@ class GameViewController: UIViewController {
         
         count -= 1
         
+        if count == 0
+        {
+            //1秒後にリザルト画面表示
+            resultTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.changeView), userInfo: nil, repeats: false)
+            //repeatsをfalseにしてなかったので何回も呼ばれるハメになってた
+        }
+    
+           
+        
+        
     }
     
     
-    @IBAction func goResult(_ sender: Any) {
+    //count==0になった時に呼ばれる関数．
+    @objc func changeView() {
         let resultVC = storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController
         if let resultVC = resultVC {
             resultVC.score = String(score)
+            //色々と初期化．
             count = 3
             score = 0
             firstImageView.image = nil
@@ -205,15 +219,15 @@ class GameViewController: UIViewController {
             firstSlotImageView.isHidden = false
             secondSlotImageView.isHidden = false
             thirdSlotImageView.isHidden = false
+//            performSegue(withIdentifier: "next", sender: nil)これだとうまく初期化できなかった
             resultVC.modalTransitionStyle = .crossDissolve
             self.present(resultVC, animated: true, completion: nil)
         }
-        
     }
-     
     
     
-        
+    
+    
     
     
     

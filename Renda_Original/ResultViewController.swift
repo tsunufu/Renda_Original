@@ -12,6 +12,7 @@ class ResultViewController: UIViewController {
     var score = String()
     
     @IBOutlet var scoreText: UILabel!
+    @IBOutlet var resultButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class ResultViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         scoreText.text = String(score)
+        resultButton.layer.cornerRadius = 30
     }
     
     
