@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A2BC6EB28C323CE00CD73E1 /* memoir-round.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A2BC6E828C323CE00CD73E1 /* memoir-round.otf */; };
+		2A2BC6EC28C323CE00CD73E1 /* memoir.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A2BC6E928C323CE00CD73E1 /* memoir.otf */; };
+		2A2BC6ED28C323CE00CD73E1 /* memoir-square.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A2BC6EA28C323CE00CD73E1 /* memoir-square.otf */; };
+		2A2BC6EF28C3262C00CD73E1 /* komadori-mini.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2A2BC6EE28C3262C00CD73E1 /* komadori-mini.otf */; };
+		2A2BC6F128C326BD00CD73E1 /* GN-Koharuiro_Sunray.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A2BC6F028C326BD00CD73E1 /* GN-Koharuiro_Sunray.ttf */; };
 		2AA2233328BC7FC9001AB325 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2233228BC7FC9001AB325 /* AppDelegate.swift */; };
 		2AA2233528BC7FC9001AB325 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2233428BC7FC9001AB325 /* SceneDelegate.swift */; };
 		2AA2233728BC7FC9001AB325 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA2233628BC7FC9001AB325 /* ViewController.swift */; };
@@ -38,6 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A2BC6E828C323CE00CD73E1 /* memoir-round.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "memoir-round.otf"; sourceTree = "<group>"; };
+		2A2BC6E928C323CE00CD73E1 /* memoir.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = memoir.otf; sourceTree = "<group>"; };
+		2A2BC6EA28C323CE00CD73E1 /* memoir-square.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "memoir-square.otf"; sourceTree = "<group>"; };
+		2A2BC6EE28C3262C00CD73E1 /* komadori-mini.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "komadori-mini.otf"; sourceTree = "<group>"; };
+		2A2BC6F028C326BD00CD73E1 /* GN-Koharuiro_Sunray.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GN-Koharuiro_Sunray.ttf"; sourceTree = "<group>"; };
 		2AA2232F28BC7FC9001AB325 /* Renda_Original.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renda_Original.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AA2233228BC7FC9001AB325 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AA2233428BC7FC9001AB325 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +113,11 @@
 		2AA2233128BC7FC9001AB325 /* Renda_Original */ = {
 			isa = PBXGroup;
 			children = (
+				2A2BC6E828C323CE00CD73E1 /* memoir-round.otf */,
+				2A2BC6EA28C323CE00CD73E1 /* memoir-square.otf */,
+				2A2BC6EE28C3262C00CD73E1 /* komadori-mini.otf */,
+				2A2BC6E928C323CE00CD73E1 /* memoir.otf */,
+				2A2BC6F028C326BD00CD73E1 /* GN-Koharuiro_Sunray.ttf */,
 				2AA2233228BC7FC9001AB325 /* AppDelegate.swift */,
 				2AA2233428BC7FC9001AB325 /* SceneDelegate.swift */,
 				2AA2233628BC7FC9001AB325 /* ViewController.swift */,
@@ -237,7 +252,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A2BC6EF28C3262C00CD73E1 /* komadori-mini.otf in Resources */,
+				2A2BC6EC28C323CE00CD73E1 /* memoir.otf in Resources */,
+				2A2BC6F128C326BD00CD73E1 /* GN-Koharuiro_Sunray.ttf in Resources */,
+				2A2BC6ED28C323CE00CD73E1 /* memoir-square.otf in Resources */,
 				2AA2233F28BC7FCB001AB325 /* LaunchScreen.storyboard in Resources */,
+				2A2BC6EB28C323CE00CD73E1 /* memoir-round.otf in Resources */,
 				2AA2233C28BC7FCB001AB325 /* Assets.xcassets in Resources */,
 				2AA2233A28BC7FC9001AB325 /* Main.storyboard in Resources */,
 			);

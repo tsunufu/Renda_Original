@@ -205,10 +205,16 @@ class GameViewController: UIViewController {
             firstSlotImageView.isHidden = false
             secondSlotImageView.isHidden = false
             thirdSlotImageView.isHidden = false
+            resultVC.modalTransitionStyle = .crossDissolve
             self.present(resultVC, animated: true, completion: nil)
         }
         
     }
+     
+    
+    
+        
+    
     
     
     /*
