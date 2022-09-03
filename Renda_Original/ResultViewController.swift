@@ -10,10 +10,11 @@ import AVFoundation
 
 class ResultViewController: UIViewController {
     
-    var score = String()
+    var score = Int()
     
     @IBOutlet var scoreText: UILabel!
     @IBOutlet var resultButton: UIButton!
+    @IBOutlet var unseiText: UILabel!
     
     let buttonSound = try!AVAudioPlayer(data: NSDataAsset(name: "kettei")!.data)
 
@@ -24,6 +25,29 @@ class ResultViewController: UIViewController {
         
         scoreText.text = String(score)
         resultButton.layer.cornerRadius = 30
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if score >= 3 {
+            unseiText.text = "今日のあなたは運が悪すぎる！\n今日は外に出ない方がいいかも?"
+        }
+        if score >= 6 {
+            unseiText.text = "可もなく不可もなく\n平凡な日になるでしょう"
+        }
+        if score >= 15 {
+            unseiText.text = "思い立ったことは\n全てやった方がいいでしょう"
+        }
+        if score >= 21 {
+            unseiText.text = "気になるあの子に告白してみよう！"
+        }
+        if score >= 27 {
+            unseiText.text = "思いがけない出会いがあるかも？"
+        }
+        if score == 30 {
+            unseiText.text = "最高に運がいい！ブラボー！"
+        }
+        
     }
     
     

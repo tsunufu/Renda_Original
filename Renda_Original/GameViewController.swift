@@ -208,9 +208,9 @@ class GameViewController: UIViewController {
             }
         }
         
-        if firstImageView.image == secondImageView.image && firstImageView.image == thirdImageView.image {
-            score += 5
-        }
+//        if firstImageView.image == secondImageView.image && firstImageView.image == thirdImageView.image {
+//            score += 5
+//        }
         
         count -= 1
         
@@ -231,7 +231,8 @@ class GameViewController: UIViewController {
     @objc func changeView() {
         let resultVC = storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController
         if let resultVC = resultVC {
-            resultVC.score = String(score)
+//            resultVC.score = String(score) リザルト画面でスコアによってテキスト変えたいためこっちはなし
+            resultVC.score = score //Intのまま渡す
 //            performSegue(withIdentifier: "next", sender: nil)これだとうまく初期化できなかった
             resultVC.modalTransitionStyle = .crossDissolve
             self.present(resultVC, animated: true, completion: nil)
