@@ -35,6 +35,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="startButtonTap" destination="BYZ-38-t0r" eventType="touchUpInside" id="o4P-kN-m6g"/>
                                     <segue destination="dcK-jn-HaB" kind="presentation" id="317-D3-xfY"/>
                                 </connections>
                             </button>
@@ -258,6 +259,13 @@
                                 <rect key="frame" x="88" y="138" width="236" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GN-Koharuiro_Sunray" family="GN-Koharuiro_Sunray" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PN-aB-s1q">
+                                <rect key="frame" x="88" y="334" width="236" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GN-Koharuiro_Sunray" family="GN-Koharuiro_Sunray" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

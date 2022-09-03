@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 class GameViewController: UIViewController {
     
     var score: Int! //score表示用
     var count: Int! //残り回数
     var number: Int! //乱数生成用
+    
+    let buttonSound = try!AVAudioPlayer(data: NSDataAsset(name: "slot")!.data)
     
     @IBOutlet var firstImageView: UIImageView!
     @IBOutlet var secondImageView: UIImageView!
@@ -46,6 +50,19 @@ class GameViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
         
         // Do any additional setup after loading the view.
+    }
+    
+    //画面が表示される直線に初期化
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        count = 3
+        score = 0
+        firstImageView.image = nil
+        secondImageView.image = nil
+        thirdImageView.image = nil
+        firstSlotImageView.isHidden = false
+        secondSlotImageView.isHidden = false
+        thirdSlotImageView.isHidden = false
     }
     
     func displayImage() {
@@ -113,6 +130,11 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func tapButton() {
+        //再生時間0に
+        buttonSound.currentTime = 0
+        
+        //再生
+        buttonSound.play()
         
         if count == 3 {
             number = Int.random(in: 0...13)
@@ -210,15 +232,6 @@ class GameViewController: UIViewController {
         let resultVC = storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController
         if let resultVC = resultVC {
             resultVC.score = String(score)
-            //色々と初期化．
-            count = 3
-            score = 0
-            firstImageView.image = nil
-            secondImageView.image = nil
-            thirdImageView.image = nil
-            firstSlotImageView.isHidden = false
-            secondSlotImageView.isHidden = false
-            thirdSlotImageView.isHidden = false
 //            performSegue(withIdentifier: "next", sender: nil)これだとうまく初期化できなかった
             resultVC.modalTransitionStyle = .crossDissolve
             self.present(resultVC, animated: true, completion: nil)

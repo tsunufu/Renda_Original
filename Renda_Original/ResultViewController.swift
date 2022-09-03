@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ResultViewController: UIViewController {
     
@@ -13,6 +14,8 @@ class ResultViewController: UIViewController {
     
     @IBOutlet var scoreText: UILabel!
     @IBOutlet var resultButton: UIButton!
+    
+    let buttonSound = try!AVAudioPlayer(data: NSDataAsset(name: "kettei")!.data)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,11 @@ class ResultViewController: UIViewController {
     
     
     @IBAction func back() {
+        //再生時間0に
+        buttonSound.currentTime = 0
+        
+        //再生
+        buttonSound.play()
         self.dismiss(animated: true, completion: nil)
     }
 

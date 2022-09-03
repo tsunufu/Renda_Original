@@ -90,6 +90,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A00277128C3B5B400181680 /* BGM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BGM;
+			sourceTree = "<group>";
+		};
 		2AA2232628BC7FC9001AB325 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +120,7 @@
 		2AA2233128BC7FC9001AB325 /* Renda_Original */ = {
 			isa = PBXGroup;
 			children = (
+				2A00277128C3B5B400181680 /* BGM */,
 				2A2BC6E828C323CE00CD73E1 /* memoir-round.otf */,
 				2A2BC6EA28C323CE00CD73E1 /* memoir-square.otf */,
 				2A2BC6EE28C3262C00CD73E1 /* komadori-mini.otf */,

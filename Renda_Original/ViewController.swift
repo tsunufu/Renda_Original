@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
+    
+    let buttonSound = try!AVAudioPlayer(data: NSDataAsset(name: "kettei")!.data)
     
     @IBOutlet var startButton: UIButton!
 
@@ -16,6 +19,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         startButton.layer.cornerRadius = 30
+    }
+    
+    @IBAction func startButtonTap() {
+        //再生時間0に
+        buttonSound.currentTime = 0
+        
+        //再生
+        buttonSound.play()
+        
     }
 
 
