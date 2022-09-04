@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     let buttonSound = try!AVAudioPlayer(data: NSDataAsset(name: "kettei")!.data)
     
+    let bgm = try!AVAudioPlayer(data: NSDataAsset(name: "keyraimupai")!.data)
+    
     @IBOutlet var startButton: UIButton!
 
     override func viewDidLoad() {
@@ -19,6 +21,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         startButton.layer.cornerRadius = 30
+        
+        //再生時間0に
+        bgm.currentTime = 0
+        
+        //再生
+        bgm.play()
     }
     
     @IBAction func startButtonTap() {
